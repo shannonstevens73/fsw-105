@@ -1,5 +1,6 @@
+// Shannon Stevens
 // Preliminaries
-/*
+
 if (5 > 3) {
     console.log("is greater than");
 }
@@ -83,7 +84,7 @@ if (typeof myNewVariable !== 'undefined'){
     console.log("variable is defined")
 }   else if (typeof myNewVariable === 'undifined')
     console.log("variable is undefined")
-*/
+
 if ("s" > 12){
     console.log("s is greater than 12")
 }
