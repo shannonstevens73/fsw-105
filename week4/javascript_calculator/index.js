@@ -1,7 +1,7 @@
-const readlineSync = require('readline-sync');
+var readlineSync = require('readline-sync');
 
 
-var firstNum = readlineSync.questionInt("Please enter first number: ");
+var firstNum = readlineSync.questionInt("Please enter first number: "); 
 var secondNum = readlineSync.questionInt("Please enter second number: ");
 var operation = readlineSync.question("What operation whould you like? (enter add, subtract, multiply, divide, or quit) ");
 
