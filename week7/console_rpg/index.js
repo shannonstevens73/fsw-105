@@ -23,14 +23,19 @@ function game() {
   const badGuy = badGuys[Math.floor(Math.random() * badGuys.length)];
   let badGuyHitPoints = 35;
   const badGuysPower = Math.floor(Math.random() * 10);
-  const walk = readlineSync.keyIn("Enter you command: ", { limit: `iwe` });
+  const walk = readlineSync.keyIn(
+    "Enter you command i to see inventory, w to walk, or e to exit: ",
+    { limit: `iwe` }
+  );
 
   if (walk === `i`) {
     console.log(`
-        ${name}:   
-        Your Hit Points: ${userHitPoints}
-        Treasure:  ${treasure}`);
-  } else if (walk === `w`) {
+      ${name}:   
+      Your Hit Points: ${userHitPoints}
+      Treasure:  ${treasure}`);
+  }
+
+  if (walk === `w`) {
     let key = Math.random();
     if (key <= 0.3) {
       console.log("Walking...");
@@ -64,31 +69,31 @@ function game() {
             console.log(`${name}, you have been slain!`);
             break;
           } else if (badGuyHitPoints <= 0) {
-            console.log(`${name}, you have defeated ${badGuys}`);
+            console.log(`${name}, you have defeated ${badGuy}`);
           }
         }
       }
-    } else if (walk === "e") {
-      console.log("Thank you for playing Dragon Quest!");
-      return (userHitPoints = 0);
-    } else {
-      console.log("broken");
     }
+  
 
 
-     while (userHitPoints > 0) {
+
+  
+  } else if (walk === "e") {
+    console.log("Thank you for playing Dragon Quest!");
+  } else {
+    console.log("broken");
+  }
+}
+game();
+
+
+
+
+  /*  while (userHitPoints > 0) {
        userRestore = function () {
          userActive = true;
-         userHitPoints = 40;
+         userHitPoints = 50;
        };
      }
-     userRestore();
-  }
-  if (userHitPoints > 0) {
-    game();
-  } else if (userHitPoints <= 0 && badGuyHitPoints <= 0) {
-    console.log("You have WON!!");
-  }
-
-  game();
-}
+     userRestore();  */
